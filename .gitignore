@@ -1,0 +1,34 @@
+# macOS
+.DS_Store
+.AppleDouble
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*~
+
+# Dependencies and builds, in case tooling is added later
+node_modules/
+dist/
+.cache/
+
+# Local secrets and environment
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# Claude Code
+.claude/
+
+# Example content that shows the format. Your own posts and projects are tracked.
+blog/what-attention-actually-computes.md
+projects/spool/
+
+# Hosting tool folders
+.vercel/
+.netlify/

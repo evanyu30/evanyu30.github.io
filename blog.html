@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog · Evan Yu</title>
+  <meta name="description" content="Notes by Evan Yu on what he is learning about transformers and AI infrastructure, plus a few opinions formed along the way." />
+  <meta name="theme-color" content="#f3ede3" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog · Evan Yu" />
+  <meta property="og:description" content="Learning notes and opinions on transformers and AI infrastructure." />
+  <meta property="og:image" content="og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="blog">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" tabindex="-1">
+    <header class="page-head">
+      <div class="container page-head-inner">
+        <p class="eyebrow reveal">Blog</p>
+        <h1 class="hero-title reveal" style="--delay: 80ms">
+          <span class="line">Notes from below</span>
+          <span class="line">the model</span>
+        </h1>
+        <p class="hero-sub reveal" style="--delay: 160ms">Notes from what I am learning, and a few opinions I have formed along the way. Project writeups live with their projects.</p>
+      </div>
+    </header>
+
+    <section class="section section-tight" aria-label="All posts">
+      <div class="container">
+        <div class="filter-bar reveal" style="--delay: 240ms">
+          <div class="filters" data-slot="post-filters" role="group" aria-label="Filter posts by topic"></div>
+          <p class="filter-status" data-slot="post-status" role="status"></p>
+        </div>
+        <ul class="post-list" data-slot="post-list">
+          <li class="post-row skeleton" aria-hidden="true"><div class="sk sk-line w-40"></div><div class="sk-body"><div class="sk sk-line w-70"></div><div class="sk sk-line w-90"></div></div></li>
+          <li class="post-row skeleton" aria-hidden="true"><div class="sk sk-line w-40"></div><div class="sk-body"><div class="sk sk-line w-70"></div><div class="sk sk-line w-90"></div></div></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <noscript><p class="noscript">This site needs JavaScript to show posts.</p></noscript>
+  <script src="content.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

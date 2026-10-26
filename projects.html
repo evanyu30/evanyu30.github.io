@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects · Evan Yu</title>
+  <meta name="description" content="AI infrastructure projects by Evan Yu: an inference runtime, fused GPU kernels, a CUPTI tracer, and a toy tensor compiler." />
+  <meta name="theme-color" content="#f3ede3" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Projects · Evan Yu" />
+  <meta property="og:description" content="Inference runtimes, GPU kernels, profilers, and compilers, built from scratch." />
+  <meta property="og:image" content="og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="projects">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" tabindex="-1">
+    <header class="page-head">
+      <div class="container page-head-inner">
+        <p class="eyebrow reveal">Projects</p>
+        <h1 class="hero-title reveal" style="--delay: 80ms">
+          <span class="line">Software that keeps</span>
+          <span class="line">accelerators busy</span>
+        </h1>
+        <p class="hero-sub reveal" style="--delay: 160ms">Runtimes, kernels, compilers, and tools I built to understand how AI workloads really run on hardware. Each one is small enough to read in an afternoon.</p>
+      </div>
+    </header>
+
+    <section class="section section-tight" aria-label="All projects">
+      <div class="container">
+        <div class="filter-bar reveal" style="--delay: 240ms">
+          <div class="filters" data-slot="project-filters" role="group" aria-label="Filter projects by area"></div>
+          <p class="filter-status" data-slot="project-status" role="status"></p>
+        </div>
+        <div class="project-list" data-slot="project-list">
+          <div class="project-card skeleton" aria-hidden="true"><div class="sk sk-line w-40"></div><div class="sk sk-line w-70"></div><div class="sk sk-line w-90"></div><div class="sk sk-line w-90"></div></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <noscript><p class="noscript">This site needs JavaScript to show projects.</p></noscript>
+  <script src="content.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>

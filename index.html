@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Evan Yu · Portfolio</title>
+  <meta name="description" content="Evan Yu's portfolio: projects and notes from going deeper into AI, one project at a time." />
+  <meta name="theme-color" content="#f3ede3" />
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+
+  <!-- Social sharing. Once deployed, change og:image to an absolute URL on your domain. -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Evan Yu · Portfolio" />
+  <meta property="og:description" content="Projects and notes from going deeper into AI, one project at a time." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="og-image.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body data-page="home">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <main id="main" tabindex="-1">
+    <!-- Hero: one full screen, one message -->
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="container hero-layout">
+        <div class="hero-copy">
+          <p class="eyebrow reveal" data-slot="hero-eyebrow"></p>
+          <h1 class="hero-title reveal" id="hero-title" data-slot="headline" style="--delay: 80ms"></h1>
+          <p class="hero-sub reveal" data-slot="subheadline" style="--delay: 160ms"></p>
+          <ol class="hero-index reveal" data-slot="hero-index" style="--delay: 240ms"></ol>
+        </div>
+
+        <figure class="attention reveal" style="--delay: 320ms">
+          <div class="att-grid" data-slot="attention" aria-hidden="true"></div>
+          <figcaption class="att-caption" data-slot="attention-caption"></figcaption>
+        </figure>
+      </div>
+
+      <a class="scroll-hint reveal" href="#work" style="--delay: 560ms">
+        <span>Scroll to explore</span>
+        <span class="scroll-track" aria-hidden="true"><span class="scroll-dot"></span></span>
+      </a>
+    </section>
+
+    <!-- Featured projects -->
+    <section class="section" id="work" aria-labelledby="work-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">Featured projects</p>
+          <h2 class="section-title reveal" id="work-title" style="--delay: 80ms">Things I have built</h2>
+          <p class="section-sub reveal" style="--delay: 160ms">Each one takes an idea apart and rebuilds it small enough to understand completely. The writeups explain what I learned along the way.</p>
+        </header>
+        <div class="projects" data-slot="featured-projects">
+          <div class="project-card skeleton" aria-hidden="true"><div class="sk sk-line w-40"></div><div class="sk sk-line w-70"></div><div class="sk sk-line w-90"></div><div class="sk sk-line w-90"></div></div>
+          <div class="project-card skeleton" aria-hidden="true"><div class="sk sk-line w-40"></div><div class="sk sk-line w-70"></div><div class="sk sk-line w-90"></div><div class="sk sk-line w-90"></div></div>
+        </div>
+        <div class="section-foot reveal">
+          <a class="btn btn-ghost" href="projects.html" data-slot="all-projects-link">See all projects <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tagline reveal -->
+    <section class="tagline-section" aria-label="What I care about">
+      <div class="container">
+        <p class="tagline" data-slot="tagline"></p>
+      </div>
+    </section>
+
+    <!-- Latest writing -->
+    <section class="section" id="writing" aria-labelledby="writing-title">
+      <div class="container">
+        <header class="section-head">
+          <p class="eyebrow reveal">From the blog</p>
+          <h2 class="section-title reveal" id="writing-title" style="--delay: 80ms">Notes from what I am learning</h2>
+        </header>
+        <ul class="post-list" data-slot="latest-posts">
+          <li class="post-row skeleton" aria-hidden="true"><div class="sk sk-line w-40"></div><div class="sk-body"><div class="sk sk-line w-70"></div><div class="sk sk-line w-90"></div></div></li>
+        </ul>
+        <div class="section-foot reveal">
+          <a class="btn btn-ghost" href="blog.html">Read the blog <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <noscript><p class="noscript">This site needs JavaScript to show projects and posts.</p></noscript>
+  <script src="content.js"></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
