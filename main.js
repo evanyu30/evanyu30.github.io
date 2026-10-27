@@ -344,7 +344,7 @@
         "@type": "Person",
         name: C.name,
         jobTitle: C.role,
-        email: `mailto:${C.email}`,
+        url: "https://kaizeyu.com",
         sameAs: [C.links.github, C.links.linkedin, C.links.x].filter(Boolean),
       });
       reveal();

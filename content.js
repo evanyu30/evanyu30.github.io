@@ -19,7 +19,7 @@
 window.PORTFOLIO = {
   name: "Evan Yu",
   role: "AI engineer",
-  email: "ykz13552611927@gmail.com",
+  email: "hi@kaizeyu.com",
   links: {
     github: "",   // e.g. "https://github.com/yourname"
     linkedin: "", // e.g. "https://www.linkedin.com/in/yourname"

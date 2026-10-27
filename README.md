@@ -78,4 +78,8 @@ Writeups appear only on their project's page, never on the blog. They are sorted
 - File names become URLs, so use lowercase words joined by hyphens.
 
 ## Deploy
-Upload the whole folder to any static host (Vercel, Netlify, GitHub Pages, Cloudflare Pages). Most hosts serve `404.html` automatically. After deploying, change `og:image` in each page to the absolute URL of `og-image.png`.
+The site is hosted on GitHub Pages at https://kaizeyu.com. Push to `main` and it updates within a minute or two. `.nojekyll` keeps GitHub from converting the Markdown files, and `CNAME` (created by GitHub) holds the custom domain.
+
+- `robots.txt` lets search engines in. To ask AI training crawlers to stay out, uncomment the block inside it.
+- `sitemap.xml` lists the main pages for search engines.
+- If the domain ever changes, update `og:image` and `twitter:image` in each page, `robots.txt`, `sitemap.xml`, and the `url` in the structured data in `main.js`.
