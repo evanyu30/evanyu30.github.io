@@ -38,9 +38,9 @@ window.PORTFOLIO = {
   // The first screen of the home page
   hero: {
     eyebrow: "Evan Yu · Portfolio",
-    headline: ["Going deeper into AI,", "one project at a time."],
+    headline: ["Mapping the sky,", "one star at a time."],
     subheadline:
-      "A place where I keep the things I build and the notes I write as I dig further into how AI really works.",
+      "A place where I keep the things I build and the notes I write.",
     index: [
       {
         num: "01",
@@ -80,12 +80,12 @@ window.PORTFOLIO = {
         [10, 9, 0.5],
       ],
       caption:
-        "Causal attention over the headline. Each word looks back at the words before it.",
+        "We read the sky as we read the past, by light that has already arrived.",
     },
   },
 
   tagline:
-    "The interesting parts of AI rarely make the headlines. They sit a few layers down, and that is where I like to dig.",
+    "The sky is full of things worth noticing. Here's what caught my eye, one light at a time . . .",
 
   contact: {
     eyebrow: "Contact",
