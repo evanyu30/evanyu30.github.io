@@ -21,19 +21,18 @@ window.PORTFOLIO = {
   role: "AI engineer",
   email: "hi@kaizeyu.com",
   links: {
-    github: "",   // e.g. "https://github.com/yourname"
+    github: "", // e.g. "https://github.com/yourname"
     linkedin: "", // e.g. "https://www.linkedin.com/in/yourname"
-    x: "",        // e.g. "https://x.com/yourname"
+    x: "", // e.g. "https://x.com/yourname"
   },
 
   // Projects, in display order. Each folder holds index.md plus one file per writeup.
-  projects: [
-    { slug: "spool", writeups: ["paging-the-kv-cache"] },
-  ],
+  projects: [{ slug: "spool", writeups: ["paging-the-kv-cache"] }],
 
   // Blog posts in the blog folder. Learning notes and opinions, not project writeups.
   posts: [
     "what-attention-actually-computes",
+    "measuring-misaligned-behavior-in-LLM",
   ],
 
   // The first screen of the home page
@@ -43,15 +42,45 @@ window.PORTFOLIO = {
     subheadline:
       "A place where I keep the things I build and the notes I write as I dig further into how AI really works.",
     index: [
-      { num: "01", label: "Projects", text: "Things I have built, each with its own writeups", href: "projects.html" },
-      { num: "02", label: "Blog", text: "Notes and opinions from what I am learning", href: "blog.html" },
+      {
+        num: "01",
+        label: "Projects",
+        text: "Things I have built, each with its own writeups",
+        href: "projects.html",
+      },
+      {
+        num: "02",
+        label: "Blog",
+        text: "Notes and opinions from what I am learning",
+        href: "blog.html",
+      },
     ],
     // The attention matrix beside the headline. Rows are the headline's own tokens.
     attention: {
-      tokens: ["Going", "deeper", "into", "AI", ",", "one", "project", "at", "a", "time", "."],
+      tokens: [
+        "Going",
+        "deeper",
+        "into",
+        "AI",
+        ",",
+        "one",
+        "project",
+        "at",
+        "a",
+        "time",
+        ".",
+      ],
       // Extra pull between tokens, [from, to, strength]: "project" looks back at "AI", "time" at "one"
-      links: [[1, 0, 0.7], [3, 1, 0.8], [6, 3, 0.9], [9, 5, 0.75], [7, 6, 0.4], [10, 9, 0.5]],
-      caption: "Causal attention over the headline. Each word looks back at the words before it.",
+      links: [
+        [1, 0, 0.7],
+        [3, 1, 0.8],
+        [6, 3, 0.9],
+        [9, 5, 0.75],
+        [7, 6, 0.4],
+        [10, 9, 0.5],
+      ],
+      caption:
+        "Causal attention over the headline. Each word looks back at the words before it.",
     },
   },
 
