@@ -274,10 +274,7 @@
       t.replaceWith(wrap);
       wrap.appendChild(t);
     });
-    [...box.children].forEach((child, i) => {
-      child.classList.add("reveal");
-      child.style.setProperty("--delay", `${Math.min(i, 2) * 80}ms`);
-    });
+    // Article text is shown as is, with no fade in on scroll, so reading is never interrupted
     return { html: box.innerHTML, toc };
   };
 
@@ -554,7 +551,11 @@
           </a></li>`
         )
         .join("");
-      initTagline();
+      const { lead, mark, text } = C.motd;
+      const at = mark ? lead.indexOf(mark) : -1;
+      slot("motd-lead").innerHTML =
+        at < 0 ? esc(lead) : `${esc(lead.slice(0, at))}<mark>${esc(mark)}</mark>${esc(lead.slice(at + mark.length))}`;
+      fill("motd-text", text);
       addJsonLd({
         "@context": "https://schema.org",
         "@type": "Person",
@@ -931,40 +932,6 @@
     };
     run();
   })();
-
-  // Tagline words light up one at a time as they cross a trigger line
-  function initTagline() {
-    const tagline = slot("tagline");
-    tagline.innerHTML = C.tagline
-      .split(/\s+/)
-      .map((w) => `<span class="word">${esc(w)}</span>`)
-      .join(" ");
-    const words = $$(".word", tagline);
-    if (reducedMotion) {
-      words.forEach((w) => w.classList.add("on"));
-      return;
-    }
-    let ticking = false;
-    const paintWords = () => {
-      ticking = false;
-      const trigger = innerHeight * 0.62;
-      words.forEach((w) => w.classList.toggle("on", w.getBoundingClientRect().top < trigger));
-    };
-    const onScroll = () => {
-      if (ticking) return;
-      ticking = true;
-      requestAnimationFrame(paintWords);
-    };
-    // Only listen while the section is near the viewport
-    new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) addEventListener("scroll", onScroll, { passive: true });
-        else removeEventListener("scroll", onScroll);
-        paintWords();
-      },
-      { rootMargin: "20% 0px" }
-    ).observe(tagline);
-  }
 
   function initForm() {
     const form = slot("form");

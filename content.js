@@ -88,8 +88,12 @@ window.PORTFOLIO = {
     ],
   },
 
-  tagline:
-    "Nothing is 100% secure. Every system has gaps, and understanding them is how systems get stronger.",
+  // The message of the day block on the home page. `mark` is highlighted in red inside `lead`.
+  motd: {
+    lead: "Nothing is 100% secure.",
+    mark: "100%",
+    text: "Every system has gaps, and understanding them is how systems get stronger.",
+  },
 
 
   contact: {

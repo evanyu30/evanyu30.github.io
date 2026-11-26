@@ -125,12 +125,16 @@
         </div>
       </section>
 
-      <!-- Tagline reveal -->
-      <section class="tagline-section" aria-label="What this site is about">
+      <!-- Message of the day -->
+      <section class="motd-section" aria-label="What this site is about">
         <div class="container">
-          <div class="reticle">
-            <p class="tagline" data-slot="tagline"></p>
-          </div>
+          <figure class="reticle motd">
+            <p class="motd-label" aria-hidden="true"><span class="motd-prompt">$</span> cat /etc/motd</p>
+            <blockquote class="motd-body">
+              <p class="motd-lead" data-slot="motd-lead"></p>
+              <p class="motd-text" data-slot="motd-text"></p>
+            </blockquote>
+          </figure>
         </div>
       </section>
 
