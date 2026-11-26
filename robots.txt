@@ -1,9 +1,10 @@
-# Search engines are welcome.
+# Search engines are welcome to index everything here.
 User-agent: *
 Allow: /
 
 # To ask AI companies not to train on these pages, remove the "#" in front of
-# the lines below. Well behaved crawlers respect this; it is a request, not a lock.
+# the lines below. Well behaved crawlers honor this. It is a request, not an
+# access control.
 # User-agent: GPTBot
 # Disallow: /
 #

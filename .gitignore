@@ -25,10 +25,6 @@ npm-debug.log*
 # Claude Code
 .claude/
 
-# Example content that shows the format. Your own posts and projects are tracked.
-blog/what-attention-actually-computes.md
-projects/spool/
-
 # Hosting tool folders
 .vercel/
 .netlify/

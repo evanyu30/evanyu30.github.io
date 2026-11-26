@@ -1,34 +1,72 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Page not found · Evan Yu</title>
-  <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#f3ede3" />
-  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" />
-  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
-  <link rel="stylesheet" href="/styles.css" />
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <main class="page" id="main" tabindex="-1">
-    <div class="container">
-      <div class="page-inner">
-        <p class="code-big" aria-hidden="true">404</p>
-        <h1 class="hero-title">Nothing lives at this address.</h1>
-        <p class="hero-sub">The link may be old, or the page moved when I reorganized the site. Every project and post is linked from the home page.</p>
-        <div>
-          <a class="btn btn-primary" href="/">
-            <i class="ph ph-arrow-left" aria-hidden="true"></i>
-            <span>Back to the home page</span>
-          </a>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Page not found · Evan Yu</title>
+    <meta name="description" content="This page does not exist." />
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <!-- Social sharing. Platforms need the full URL of the preview image. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Evan Yu" />
+    <meta property="og:title" content="Page not found · Evan Yu" />
+    <meta property="og:description" content="This page does not exist." />
+    <meta property="og:image" content="https://kaizeyu.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://kaizeyu.com/og-image.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+      integrity="sha384-6p9AefaqUhEVheRlj1mpAkbngHXy9mbYMrIdcIt4Jlc9lOLIablJq3bBsLOjGwZ7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <main class="page" id="main" tabindex="-1">
+      <div class="bg-glow" aria-hidden="true"></div>
+      <pre class="hexdump" aria-hidden="true"><span class="hd-off">00000000:</span> 4745 5420 2f74 6869 732d 7061 6765 2048  GET /this-page H
+<span class="hd-off">00000010:</span> 5454 502f 312e 310d 0a48 6f73 743a 206b  TTP/1.1..Host: k
+<span class="hd-off">00000020:</span> 6169 7a65 7975 2e63 6f6d 0d0a 5573 6572  aizeyu.com..User
+<span class="hd-off">00000030:</span> 2d41 6765 6e74 3a20 4d6f 7a69 6c6c 612f  -Agent: Mozilla/
+<span class="hd-off">00000040:</span> 352e 3020 2858 3131 3b20 4b61 6c69 290d  5.0 (X11; Kali).
+<span class="hd-off">00000050:</span> 0a41 6363 6570 743a 2074 6578 742f 6874  .Accept: text/ht
+<span class="hd-off">00000060:</span> 6d6c 0d0a 436f 6e6e 6563 7469 6f6e 3a20  ml..Connection: 
+<span class="hd-off">00000070:</span> 636c 6f73 650d 0a0d 0a48 5454 502f 312e  close....HTTP/1.
+<span class="hd-off">00000080:</span> 3120 <span class="hd-hit">34</span><span class="hd-hit">30</span> <span class="hd-hit">34</span><span class="hd-hit">20</span> <span class="hd-hit">4e</span><span class="hd-hit">6f</span> <span class="hd-hit">74</span><span class="hd-hit">20</span> <span class="hd-hit">46</span><span class="hd-hit">6f</span> <span class="hd-hit">75</span><span class="hd-hit">6e</span> <span class="hd-hit">64</span>0d  1 <span class="hd-hit">4</span><span class="hd-hit">0</span><span class="hd-hit">4</span><span class="hd-hit"> </span><span class="hd-hit">N</span><span class="hd-hit">o</span><span class="hd-hit">t</span><span class="hd-hit"> </span><span class="hd-hit">F</span><span class="hd-hit">o</span><span class="hd-hit">u</span><span class="hd-hit">n</span><span class="hd-hit">d</span>.
+<span class="hd-off">00000090:</span> 0a53 6572 7665 723a 2047 6974 4875 622e  .Server: GitHub.
+<span class="hd-off">000000a0:</span> 636f 6d0d 0a43 6f6e 7465 6e74 2d54 7970  com..Content-Typ
+<span class="hd-off">000000b0:</span> 653a 2074 6578 742f 6874 6d6c 3b20 6368  e: text/html; ch
+<span class="hd-off">000000c0:</span> 6172 7365 743d 7574 662d 380d 0a0d 0a6e  arset=utf-8....n
+<span class="hd-off">000000d0:</span> 6f74 6869 6e67 2069 7320 6c69 7374 656e  othing is listen
+<span class="hd-off">000000e0:</span> 696e 6720 6f6e 2074 6869 7320 7061 7468  ing on this path</pre>
+      <div class="container">
+        <div class="page-inner">
+          <p class="code-big" aria-hidden="true"><span class="t-dim">HTTP/1.1</span> 404</p>
+          <h1 class="page-title">Nothing is listening on this path.</h1>
+          <p class="hero-sub">The link may be outdated, or the page has moved. Everything still published is reachable from the home page.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="/"><i class="ph ph-arrow-left" aria-hidden="true"></i><span>Return to the home page</span></a>
+            <a class="btn btn-ghost" href="/writeups.html">Browse the writeups</a>
+          </div>
         </div>
       </div>
-    </div>
-  </main>
-</body>
+    </main>
+  </body>
 </html>

@@ -1,0 +1,14 @@
+# Security contact for kaizeyu.com, in the format of RFC 9116.
+# Reports about this site, or about anything published on it, are welcome.
+
+Contact: mailto:hi@kaizeyu.com
+Contact: https://kaizeyu.com/contact.html
+Expires: 2027-11-25T00:00:00.000Z
+Preferred-Languages: en
+Canonical: https://kaizeyu.com/.well-known/security.txt
+
+# Policy
+# Report in good faith and allow reasonable time for a fix before disclosing
+# publicly. Do not access data that is not yours, and do not run denial of
+# service attacks or automated scans that degrade the site. There is no bug
+# bounty, but reporters can be credited on the site on request.

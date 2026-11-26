@@ -3,21 +3,19 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Evan Yu · Portfolio</title>
-    <meta
-      name="description"
-      content="Evan Yu's portfolio: projects and notes from going deeper into AI, one project at a time."
-    />
-    <meta name="theme-color" content="#f3ede3" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; font-src https://fonts.gstatic.com https://unpkg.com; img-src 'self' data: https:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'; upgrade-insecure-requests" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Evan Yu · Red Teaming and AI Security</title>
+    <meta name="description" content="Red teaming and AI security work by Evan Yu: CTF and lab writeups, offensive tooling, and research on attacking AI systems." />
+    <meta name="theme-color" content="#0a0a0b" />
+    <meta name="color-scheme" content="dark" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
 
     <!-- Social sharing. Platforms need the full URL of the preview image. -->
     <meta property="og:type" content="website" />
-    <meta property="og:title" content="Evan Yu · Portfolio" />
-    <meta
-      property="og:description"
-      content="Projects and notes from going deeper into AI, one project at a time."
-    />
+    <meta property="og:site_name" content="Evan Yu" />
+    <meta property="og:title" content="Evan Yu · Red Teaming and AI Security" />
+    <meta property="og:description" content="CTF and lab writeups, offensive tooling, and research on attacking AI systems." />
     <meta property="og:image" content="https://kaizeyu.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -28,15 +26,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600&display=swap"
     />
     <link
       rel="stylesheet"
       href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css"
+      integrity="sha384-6p9AefaqUhEVheRlj1mpAkbngHXy9mbYMrIdcIt4Jlc9lOLIablJq3bBsLOjGwZ7"
+      crossorigin="anonymous"
     />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -46,128 +42,151 @@
     <main id="main" tabindex="-1">
       <!-- Hero: one full screen, one message -->
       <section class="hero" id="top" aria-labelledby="hero-title">
+        <canvas class="netmap" data-netmap aria-hidden="true"></canvas>
+        <div class="bg-glow" aria-hidden="true"></div>
         <div class="container hero-layout">
           <div class="hero-copy">
-            <p class="eyebrow reveal" data-slot="hero-eyebrow"></p>
-            <h1
-              class="hero-title reveal"
-              id="hero-title"
-              data-slot="headline"
-              style="--delay: 80ms"
-            ></h1>
-            <p
-              class="hero-sub reveal"
-              data-slot="subheadline"
-              style="--delay: 160ms"
-            ></p>
-            <ol
-              class="hero-index reveal"
-              data-slot="hero-index"
-              style="--delay: 240ms"
-            ></ol>
+            <p class="eyebrow reveal"><span class="live-dot" aria-hidden="true"></span><span data-slot="hero-eyebrow"></span></p>
+            <h1 class="hero-title reveal" id="hero-title" data-slot="headline" style="--delay: 80ms"></h1>
+            <p class="hero-sub reveal" data-slot="subheadline" style="--delay: 160ms"></p>
+            <div class="hero-actions reveal" data-slot="hero-actions" style="--delay: 240ms"></div>
           </div>
 
-          <figure class="attention reveal" style="--delay: 320ms">
-            <div
-              class="att-grid"
-              data-slot="attention"
-              aria-hidden="true"
-            ></div>
-            <figcaption
-              class="att-caption"
-              data-slot="attention-caption"
-            ></figcaption>
+          <figure class="terminal reveal" style="--delay: 320ms">
+            <div class="terminal-bar" aria-hidden="true">
+              <span class="terminal-dots"><span></span><span></span><span></span></span>
+              <span class="terminal-name">session · zsh</span>
+            </div>
+            <div class="terminal-body" data-slot="terminal" aria-hidden="true"></div>
+            <figcaption class="terminal-caption" data-slot="terminal-caption"></figcaption>
           </figure>
         </div>
 
-        <a class="scroll-hint reveal" href="#work" style="--delay: 560ms">
-          <span>Scroll to explore</span>
-          <span class="scroll-track" aria-hidden="true"
-            ><span class="scroll-dot"></span
-          ></span>
+        <a class="scroll-hint reveal" href="#scope" style="--delay: 560ms">
+          <span>Scroll</span>
+          <span class="scroll-track" aria-hidden="true"><span class="scroll-dot"></span></span>
         </a>
       </section>
 
-      <!-- Featured projects -->
-      <section class="section" id="work" aria-labelledby="work-title">
+      <!-- Scope: the three areas of the site -->
+      <section class="section" id="scope" aria-labelledby="scope-title">
         <div class="container">
           <header class="section-head">
-            <p class="eyebrow reveal">Featured projects</p>
-            <h2
-              class="section-title reveal"
-              id="work-title"
-              style="--delay: 80ms"
-            >
-              Things I have built
-            </h2>
-            <p class="section-sub reveal" style="--delay: 160ms">
-              Each one takes an idea apart and rebuilds it small enough to
-              understand completely. The writeups explain what I learned along
-              the way.
-            </p>
+            <p class="eyebrow reveal"><span class="eyebrow-mark" aria-hidden="true">//</span> <span data-slot="scope-eyebrow"></span></p>
+            <h2 class="section-title reveal" id="scope-title" data-slot="scope-title" style="--delay: 80ms"></h2>
+            <p class="section-sub reveal" data-slot="scope-sub" style="--delay: 160ms"></p>
           </header>
-          <div class="projects" data-slot="featured-projects">
-            <div class="project-card skeleton" aria-hidden="true">
-              <div class="sk sk-line w-40"></div>
-              <div class="sk sk-line w-70"></div>
-              <div class="sk sk-line w-90"></div>
-              <div class="sk sk-line w-90"></div>
-            </div>
-            <div class="project-card skeleton" aria-hidden="true">
-              <div class="sk sk-line w-40"></div>
-              <div class="sk sk-line w-70"></div>
-              <div class="sk sk-line w-90"></div>
-              <div class="sk sk-line w-90"></div>
-            </div>
+          <ul class="scope-grid" data-slot="scope"></ul>
+        </div>
+      </section>
+
+      <!-- Latest writeups -->
+      <section class="section" id="writeups" data-section="writeups" aria-labelledby="writeups-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow reveal"><span class="sec-num"></span> <span class="eyebrow-mark" aria-hidden="true">//</span> Writeups</p>
+            <h2 class="section-title reveal" id="writeups-title" style="--delay: 80ms">Latest solves</h2>
+            <p class="section-sub reveal" style="--delay: 160ms">Recent CTF challenges and lab machines, explained from the first scan to the final flag.</p>
+          </header>
+          <ul class="entry-list" data-slot="latest-writeups">
+              <li class="entry-row skeleton" aria-hidden="true">
+                <div class="sk sk-line w-40"></div>
+                <div class="sk-body">
+                  <div class="sk sk-line w-70"></div>
+                  <div class="sk sk-line w-90"></div>
+                </div>
+              </li>
+          </ul>
+          <div class="section-foot reveal">
+            <a class="btn btn-ghost" href="writeups.html">All writeups <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section class="section" id="research" data-section="research" aria-labelledby="research-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow reveal"><span class="sec-num"></span> <span class="eyebrow-mark" aria-hidden="true">//</span> Research</p>
+            <h2 class="section-title reveal" id="research-title" style="--delay: 80ms">AI red teaming</h2>
+            <p class="section-sub reveal" style="--delay: 160ms">Experiments on how language models and agents break under adversarial pressure, and how to catch the failures that are easy to miss.</p>
+          </header>
+          <div class="card-grid" data-slot="latest-research">
+              <div class="card skeleton" aria-hidden="true">
+                <div class="sk sk-line w-40"></div>
+                <div class="sk sk-line w-70"></div>
+                <div class="sk sk-line w-90"></div>
+                <div class="sk sk-line w-90"></div>
+              </div>
           </div>
           <div class="section-foot reveal">
-            <a
-              class="btn btn-ghost"
-              href="projects.html"
-              data-slot="all-projects-link"
-              >See all projects
-              <i class="ph ph-arrow-right" aria-hidden="true"></i
-            ></a>
+            <a class="btn btn-ghost" href="research.html">All research <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </section>
 
       <!-- Tagline reveal -->
-      <section class="tagline-section" aria-label="What I care about">
+      <section class="tagline-section" aria-label="What this site is about">
         <div class="container">
-          <p class="tagline" data-slot="tagline"></p>
+          <div class="reticle">
+            <p class="tagline" data-slot="tagline"></p>
+          </div>
         </div>
       </section>
 
-      <!-- Latest writing -->
-      <section class="section" id="writing" aria-labelledby="writing-title">
+      <!-- Featured projects -->
+      <section class="section" id="projects" data-section="projects" aria-labelledby="projects-title">
         <div class="container">
           <header class="section-head">
-            <p class="eyebrow reveal">From the blog</p>
+            <p class="eyebrow reveal"><span class="sec-num"></span> <span class="eyebrow-mark" aria-hidden="true">//</span> Projects</p>
+            <h2 class="section-title reveal" id="projects-title" style="--delay: 80ms">Tools on the workbench</h2>
+            <p class="section-sub reveal" style="--delay: 160ms">Offensive tooling and lab environments, each with a breakdown of how it works.</p>
           </header>
-          <ul class="post-list" data-slot="latest-posts">
-            <li class="post-row skeleton" aria-hidden="true">
-              <div class="sk sk-line w-40"></div>
-              <div class="sk-body">
+          <div class="card-grid" data-slot="latest-projects">
+              <div class="card skeleton" aria-hidden="true">
+                <div class="sk sk-line w-40"></div>
                 <div class="sk sk-line w-70"></div>
                 <div class="sk sk-line w-90"></div>
+                <div class="sk sk-line w-90"></div>
               </div>
-            </li>
+              <div class="card skeleton" aria-hidden="true">
+                <div class="sk sk-line w-40"></div>
+                <div class="sk sk-line w-70"></div>
+                <div class="sk sk-line w-90"></div>
+                <div class="sk sk-line w-90"></div>
+              </div>
+          </div>
+          <div class="section-foot reveal">
+            <a class="btn btn-ghost" href="projects.html">All projects <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Latest posts -->
+      <section class="section" id="blog" data-section="posts" aria-labelledby="blog-title">
+        <div class="container">
+          <header class="section-head">
+            <p class="eyebrow reveal"><span class="sec-num"></span> <span class="eyebrow-mark" aria-hidden="true">//</span> Blog</p>
+            <h2 class="section-title reveal" id="blog-title" style="--delay: 80ms">Field notes</h2>
+            <p class="section-sub reveal" style="--delay: 160ms">Shorter pieces on security, AI alignment, and the craft of breaking things.</p>
+          </header>
+          <ul class="entry-list" data-slot="latest-posts">
+              <li class="entry-row skeleton" aria-hidden="true">
+                <div class="sk sk-line w-40"></div>
+                <div class="sk-body">
+                  <div class="sk sk-line w-70"></div>
+                  <div class="sk sk-line w-90"></div>
+                </div>
+              </li>
           </ul>
           <div class="section-foot reveal">
-            <a class="btn btn-ghost" href="blog.html"
-              >Read the blog <i class="ph ph-arrow-right" aria-hidden="true"></i
-            ></a>
+            <a class="btn btn-ghost" href="blog.html">Read the blog <i class="ph ph-arrow-right" aria-hidden="true"></i></a>
           </div>
         </div>
       </section>
     </main>
 
-    <noscript
-      ><p class="noscript">
-        This site needs JavaScript to show projects and posts.
-      </p></noscript
-    >
+    <noscript><p class="noscript">Turn on JavaScript to see the latest writeups, research, and posts.</p></noscript>
     <script src="content.js"></script>
     <script src="main.js" defer></script>
   </body>
